@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-var rdr = bufio.NewReaderSize(os.Stdin, 10000)
+var rdr = bufio.NewReaderSize(os.Stdin, 1000000)
 
 func readLine() string {
 	buf := make([]byte, 0, 10000)
