@@ -9,10 +9,10 @@ import (
 	"strings"
 )
 
-var rdr = bufio.NewReaderSize(os.Stdin, 1000000)
+var rdr = bufio.NewReaderSize(os.Stdin, 10000)
 
 func readLine() string {
-	buf := make([]byte, 0, 1000000)
+	buf := make([]byte, 0, 10000)
 	for {
 		l, p, e := rdr.ReadLine()
 		if e != nil {
@@ -49,19 +49,20 @@ func main() {
 	ins := readLine()
 	n, _ := strconv.Atoi(ins)
 
-	var c costs
+	c := make([]cost, n)
 	for i := 0; i < n; i++ {
 		inabs := strings.Split(readLine(), " ")
 		ai, _ := strconv.Atoi(inabs[0])
 		bi, _ := strconv.Atoi(inabs[1])
-		c = append(c, cost{a: ai, b: bi})
+		c[i].a = ai
+		c[i].b = bi
 	}
-	sort.Sort(c)
+	sort.Sort(costs(c))
 
 	var sum int
-	for _, v := range c {
-		sum += v.a
-		if sum > v.b {
+	for i := range c {
+		sum += c[i].a
+		if sum > c[i].b {
 			fmt.Println("No")
 			return
 		}
