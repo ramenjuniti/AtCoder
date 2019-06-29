@@ -25,6 +25,7 @@ func readLine() string {
 	return string(buf)
 }
 
+//　パスカルの三角形のやつ
 var c [4005][4005]int
 
 func init() {
@@ -65,7 +66,7 @@ func main() {
 	ins := strings.Split(readLine(), " ")
 	n, _ := strconv.Atoi(ins[0])
 	k, _ := strconv.Atoi(ins[1])
-	d := 10*10*10*10*10*10*10*10*10 + 7
+	d := 1000000007
 
 	for i := 1; i <= k; i++ {
 		b := f(k, i)
