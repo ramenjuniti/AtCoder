@@ -39,9 +39,6 @@ func init() {
 }
 
 func comb(n, k int) int {
-	if k < 0 {
-		return 0
-	}
 	return c[n][k]
 }
 
