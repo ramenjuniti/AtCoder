@@ -50,14 +50,16 @@ func readInts() []int {
 
 // sortしたスライスを返す
 func sorted(a []int) []int {
-	sort.Ints(a)
-	b := a
+	b := make([]int, len(a))
+	copy(b, a)
+	sort.Ints(b)
 	return b
 }
 
 // 逆順のsort
 func reverse(a []int) []int {
-	sort.Sort(sort.Reverse(sort.IntSlice(a)))
-	b := a
+	b := make([]int, len(a))
+	copy(b, a)
+	sort.Sort(sort.Reverse(sort.IntSlice(b)))
 	return b
 }
