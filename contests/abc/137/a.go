@@ -73,14 +73,4 @@ func main() {
 
 	max := math.Max(a+b, math.Max(a-b, a*b))
 	fmt.Println(max)
-
-	// if a+b >= a-b && a+b >= a*b {
-	// 	fmt.Println(a +)
-	// }
-	// if a-b >= a+b && a-b >= a*b {
-	// 	fmt.Println(a - b)
-	// }
-	// if a*b >= a+b && a*b >= a-b {
-	// 	fmt.Println(a * b)
-	// }
 }
